@@ -14,7 +14,7 @@
        <div class="py-4"></div> 
             <div class="flex justify-end">
                 <button class="btn btn-ghost" v-if="step!==0" @click="step--">Back</button>
-                <button class="btn btn-primary" type="submit" v-if="step!=props.steps.length-1" @click="step++">Next</button>
+                <button class="btn btn-primary" type="submit" v-if="step!=props.steps.length-1">Next</button>
             </div>
         </form>
     </div>
