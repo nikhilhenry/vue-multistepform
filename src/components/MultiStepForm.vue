@@ -21,11 +21,12 @@
 
 <script lang="ts" setup>
 import {ref} from "vue"
+import Step1 from "./Step1.vue"
 
 let step = ref(0);
 const props = defineProps<{
-    forms:[string],
-    steps:[string]
+    forms:typeof Step1[]
+    steps:string[]
 }>()
 
 </script>
