@@ -1,12 +1,12 @@
 <template>
-    <div>
-        <ul class="steps">
+    <div class="w-6/12">
+        <ul class="steps min-w-full">
             <li v-for="(stepText,index) in props.steps" class="step" :class="index==step ? 'step-primary' : ''">
                 {{stepText}}
             </li>
         </ul>
        <div class="py-3"></div> 
-        <form @submit.prevent="formAction"> 
+        <form @submit.prevent="formAction" class="min-w-full px-6"> 
             <component
                 :is="props.forms[step]"
             >
