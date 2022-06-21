@@ -9,8 +9,9 @@
 <script lang="ts" setup>
  import MultiStepForm from "./components/MultiStepForm.vue" 
  import Step1 from "./components/Step1.vue"
+ import Step3 from "./components/Step3.vue"
 
- const forms = [Step1,Step1]
+ const forms = [Step1,Step1,Step3]
  const submitAction = () => {console.log("submitting form...")}
 </script>
 
