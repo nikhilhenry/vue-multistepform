@@ -1,15 +1,12 @@
 <template>
-    <div class="form-control w-full max-w-xs">
-      <label class="label">
-        <span class="label-text">Pick the best fantasy franchise</span>
-      </label>
-      <select class="select select-bordered">
-        <option disabled selected>Pick one</option>
-        <option>Star Wars</option>
-        <option>Harry Potter</option>
-        <option>Lord of the Rings</option>
-        <option>Planet of the Apes</option>
-        <option>Star Trek</option>
-      </select>
+    <div class="form-control w-full">
+        <div class="rating rating-lg">
+          <input type="radio" name="rating-9" class="rating-hidden" />
+          <input type="radio" name="rating-9" class="mask mask-star-2" />
+          <input type="radio" name="rating-9" class="mask mask-star-2" checked />
+          <input type="radio" name="rating-9" class="mask mask-star-2" />
+          <input type="radio" name="rating-9" class="mask mask-star-2" />
+          <input type="radio" name="rating-9" class="mask mask-star-2" />
+        </div>
     </div>
 </template>
