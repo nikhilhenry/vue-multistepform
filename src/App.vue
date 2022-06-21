@@ -1,6 +1,8 @@
 <template>
   <div class="flex flex-col items-center justify-center h-screen">
-    <MultiStepForm :forms="forms" :steps="['step 1','step 2','step 3']"/>
+    <MultiStepForm :forms="forms" :steps="['step 1','step 2','step 3']" 
+      :submit-action="submitAction"
+    />
   </div>
 </template>
 
@@ -9,6 +11,7 @@
  import Step1 from "./components/Step1.vue"
 
  const forms = [Step1,Step1]
+ const submitAction = () => {console.log("submitting form...")}
 </script>
 
 <style>

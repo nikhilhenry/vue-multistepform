@@ -14,7 +14,8 @@
        <div class="py-4"></div> 
             <div class="flex justify-end">
                 <button class="btn btn-ghost" v-if="step!==0" @click="step--">Back</button>
-                <button class="btn btn-primary" type="submit" v-if="step!=props.steps.length-1">Next</button>
+                <button class="btn btn-primary" type="submit" v-if="step!==props.steps.length-1">Next</button>
+                <button class="btn btn-primary" type="submit" v-if="step==props.steps.length-1">Submit</button>
             </div>
         </form>
     </div>
@@ -26,11 +27,13 @@ import Step1 from "./Step1.vue"
 
 let step = ref(0);
 const props = defineProps<{
-    forms:typeof Step1[]
-    steps:string[]
+    forms:typeof Step1[],
+    steps:string[],
+    submitAction:()=>void
 }>()
 
 const formAction = () => {
-        if(step.value !== props.steps.length-1) step.value++
+        if(step.value !== props.steps.length-1) return step.value++
+        props.submitAction()
 }
 </script>
