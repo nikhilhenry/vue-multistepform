@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col items-center justify-center h-screen">
-    <MultiStepForm :forms="['hi','hello']"/>
+    <MultiStepForm :forms="['hi','hello']" :steps="['step 1','step 2','step 3']"/>
   </div>
 </template>
 

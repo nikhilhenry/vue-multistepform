@@ -1,20 +1,19 @@
 <template>
     <div>
         <ul class="steps">
-            <li class="step step-primary">Register</li>
-            <li class="step step-primary">Choose plan</li>
-            <li class="step">Purchase</li>
-            <li class="step">Receive Product</li>
+            <li v-for="(stepText,index) in props.steps" class="step" :class="index==step ? 'step-primary' : ''">
+                {{stepText}}
+            </li>
         </ul>
        <div class="py-5"></div> 
         <form @submit.prevent> 
             <component
-                :is="forms[step]"
+                :is="props.forms[step]"
             >
             </component>
             <div class="flex justify-end">
-                <button class="btn btn-ghost" @click="step--">Back</button>
-                <button class="btn btn-primary" @click="step++">Next</button>
+                <button class="btn btn-ghost" v-if="step!==0" @click="step--">Back</button>
+                <button class="btn btn-primary" v-if="step!=props.steps.length-1" @click="step++">Next</button>
             </div>
         </form>
     </div>
@@ -25,7 +24,8 @@ import {ref} from "vue"
 
 let step = ref(0);
 const props = defineProps<{
-    forms:[string]
+    forms:[string],
+    steps:[string]
 }>()
 
 </script>
