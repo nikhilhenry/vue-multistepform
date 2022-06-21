@@ -1,8 +1,12 @@
 <template>
   <div class="flex flex-col items-center justify-center h-screen">
-    <h1 class="text-3xl">Hello Forms!</h1>
+    <MultiStepForm :forms="['hi','hello']"/>
   </div>
 </template>
+
+<script lang="ts" setup>
+ import MultiStepForm from "./components/MultiStepForm.vue" 
+</script>
 
 <style>
 #app {
